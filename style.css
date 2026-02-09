@@ -39,13 +39,13 @@ footer {
 .carte {
     background: #fff;
     border-radius: 10px;
-    overflow: hidden; /* Pour que l'image ne dépasse pas des coins arrondis */
+    overflow: hidden; 
     box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     transition: transform 0.3s ease;
 }
 
 .carte:hover {
-    transform: translateY(-5px); /* Petit effet de soulèvement au survol */
+    transform: translateY(-5px);
 }
 
 .carte img {
