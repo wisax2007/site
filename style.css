@@ -27,3 +27,35 @@ footer {
     font-size: 0.8rem;
     color: #777;
 }
+.grille-projets {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.carte {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden; /* Pour que l'image ne dépasse pas des coins arrondis */
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.carte:hover {
+    transform: translateY(-5px); /* Petit effet de soulèvement au survol */
+}
+
+.carte img {
+    width: 10%;
+    height: 10%;
+    object-fit: cover;
+    text-align: center;
+}
+
+.contenu {
+    padding: 15px;
+}
+
