@@ -1,0 +1,53 @@
+from tkinter import *
+from tkinter import ttk
+
+def calcul(op):
+    try:
+        num1 = float(entre1.get())
+        num2 = float(entre2.get())
+        if op == "+": res = num1 + num2
+        if op == "-": res = num1 - num2
+        if op == "*": res = num1 * num2
+        if op == "/": res = num1 / num2 if num2 != 0 else "Div/0 impossible"
+        
+        lbl_res.config(text=f"Résultat : {res}", foreground="blue")
+    except ValueError:
+        lbl_res.config(text="Entrez des nombres valides", foreground="red")
+
+window = Tk()
+window.title("Calculatrice Simple")
+window.geometry("250x300")
+window.config(bg="lightblue")
+
+window.grid_columnconfigure(0, weight=1)
+window.grid_columnconfigure(1, weight=1)
+
+
+ttk.Label(window, text="Nombre 1 :").grid(row=0, column=0, padx=5, pady=5)
+entre1 = ttk.Entry(window)
+entre1.grid(row=0, column=1, padx=5, pady=5)
+
+
+ttk.Label(window, text="Nombre 2 :").grid(row=1, column=0, padx=5, pady=5)
+entre2 = ttk.Entry(window)
+entre2.grid(row=1, column=1, padx=5, pady=5)
+
+
+btn_plus = ttk.Button(window, text="+", command=lambda: calcul("+"))
+btn_plus.grid(row=2, column=0, sticky="ew", padx=2)
+
+btn_moins = ttk.Button(window, text="-", command=lambda: calcul("-"))
+btn_moins.grid(row=2, column=1, sticky="ew", padx=2)
+
+
+btn_mult = ttk.Button(window, text="x", command=lambda: calcul("*"))
+btn_mult.grid(row=3, column=0, sticky="ew", padx=2)
+
+btn_div = ttk.Button(window, text="/", command=lambda: calcul("/"))
+btn_div.grid(row=3, column=1, sticky="ew", padx=2)
+
+
+lbl_res = ttk.Label(window, text="Résultat : ")
+lbl_res.grid(row=4, column=0, columnspan=2, pady=20)
+
+window.mainloop()
